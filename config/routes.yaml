@@ -3,5 +3,8 @@ app_logout:
     methods: GET
 login:
     path:       /login
-    controller: App\Controller\SecurityController::login
-    methods: POST
+    controller: App\Controller\LoginController::showForm
+
+protected_route:
+    path: /protected
+    controller: App\Controller\ProtectedPartController::protectedZone

@@ -22,6 +22,8 @@ security:
             guard:
                 authenticators:
                     - App\Security\TokenAuthenticator
+                    - App\Security\LoginFormAuthenticator
+                entry_point: App\Security\TokenAuthenticator
 
     access_control:
         - { path: '^/api', roles: ROLE_USER }

@@ -36,6 +36,7 @@ class User implements UserInterface
 
   /**
    * @ORM\Column(type="string", unique=true, nullable=true)
+   * @var string
    */
   private $apiToken;
 
@@ -111,5 +112,15 @@ class User implements UserInterface
   {
       // If you store any temporary, sensitive data on the user, clear it here
       // $this->plainPassword = null;
+  }
+
+  public function getApiToken(): string
+  {
+      return $this->apiToken;
+  }
+
+  public function setApiToken(string $apiToken): void
+  {
+      $this->apiToken = $apiToken;
   }
 }
